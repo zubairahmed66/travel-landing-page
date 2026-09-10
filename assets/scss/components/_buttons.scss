@@ -1,0 +1,36 @@
+@use '../helper'as *;
+
+/*Button*/
+.za-btn {
+    // za-btn
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    white-space: nowrap;
+    transition: var(--za-nav-smooth-motion);
+
+    &-primary {
+        // za-btn
+        background-color: var(--za-nav-prime-clr);
+        color: var(--za-nav-light-clr);
+        &:hover{
+            background-color: aquamarine;
+        }
+    }
+
+    &-secondary {
+        // za-btn
+        background-color: transparent;
+        // border-color: var(--za-nav-scnd-clr);
+        color: #00422B;
+    }
+    &.za-active {
+    // za-btn
+    background-color: #10B981 !important;
+    color: #00422B !important;
+    // border-color: var(--za-nav-dark-clr) !important;
+    }
+}

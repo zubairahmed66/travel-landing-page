@@ -1,0 +1,26 @@
+//---Responsive Variables--
+
+//---High-end Desktops or Laptops
+$xxxl: 'only screen and (min-width: 1601px) and (max-width: 1800px)';
+//---Medium Desktops
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1600px)';
+//---Desktops
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+//---Laptops or Larger Tablets
+$lg: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+//---Laptops or Larger Tablets
+$md: 'only screen and (min-width: 768px) and (max-width: 991px)';
+//---Tablets
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+//---Smartphones
+$xs: '(max-width: 767px)';
+//---Other--Small Devices or Special Mobile Sizes
+$od: 'only screen and (min-width: 300px) and (max-width: 750px)';
+$dm: '(max-width: 460px)';
+
+
+//    @media #{$xl} {
+//         height: 650px;
+//    }
+
+// https://chatgpt.com/share/6767edf0-4380-8000-91f6-21e56101e443

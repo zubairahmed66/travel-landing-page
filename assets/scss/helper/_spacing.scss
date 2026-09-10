@@ -1,0 +1,41 @@
+/** Spacing Style **/
+
+/*--Margin Top--*/
+@for $z from 1 through 100 {
+    .mt-#{1 * $z}{margin-top: 1px * $z;}
+}
+
+/*--Margin Bottom--*/
+@for $z from 1 through 100 {
+    .mb-#{1 * $z}{margin-bottom: 1px * $z;}
+}
+
+/*--Margin Left--*/
+@for $z from 1 through 100 {
+    .ml-#{1 * $z}{margin-left: 1px * $z;}
+}
+
+/*--Margin Right--*/
+@for $z from 1 through 100 {
+    .mr-#{1 * $z}{margin-right: 1px * $z;}
+}
+
+/*--Padding Top--*/
+@for $z from 1 through 100 {
+    .pt-#{1 * $z}{padding-top: 1px * $z;}
+}
+
+/*--Padding Bottom--*/
+@for $z from 1 through 100 {
+    .pb-#{1 * $z}{padding-bottom: 1px * $z;}
+}
+
+/*--Padding Left--*/
+@for $z from 1 through 100 {
+    .pl-#{1 * $z}{padding-left: 1px * $z;}
+}
+
+/*--Padding Right--*/
+@for $z from 1 through 100 {
+    .pr-#{1 * $z}{padding-right: 1px * $z;}
+}

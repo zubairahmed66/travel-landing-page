@@ -1,0 +1,66 @@
+// font url 
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap';
+
+// Font Family 
+
+$font-family: (
+    ff: (
+        body: "'Be Vietnam Pro', sans-serif",
+        heading: "'Be Vietnam Pro', sans-serif",
+        p: "'Be Vietnam Pro', sans-serif",
+        fontawesome: "'Font Awesome 6 Free', sans-serif"
+    )   
+);
+
+// Font Weight
+
+$font-weight:(
+    fw:(
+        regular: 400,
+        medium:500,
+        semiBold:700,
+    )
+);
+
+// Font Size
+
+// Scaling factors for devices
+$scaling-factor: (
+  tablet: 0.85, // 85% of desktop font size
+  mobile: 0.7   // 70% of desktop font size
+);
+
+// Font sizes for elements
+// $font-sizes: (
+//   body: 1rem,
+//   p: 1rem,
+//   h1: 3rem,
+//   h2: 2.5rem,
+//   h3: 2rem,
+//   h4: 1.75rem,
+//   h5: 1.5rem,
+//   h6: 1.25rem,
+//   button: 1rem
+// );
+
+$font-sizes: (
+  body: 16px,  
+  p: 16px,    
+  h1: 54px,    
+  h2: 48px,  
+  h3: 38px,    
+  h4: 36px, 
+  h5: 32px, 
+  h6: 24px, 
+  button: 14px 
+);
+
+// Extract scaling factors
+$tablet-scale: map-get($scaling-factor, tablet);
+$mobile-scale: map-get($scaling-factor, mobile);
+
+
+
+
+

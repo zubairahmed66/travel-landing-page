@@ -1,0 +1,44 @@
+@use 'colors' as *;
+
+@use 'typography' as *;
+
+/*****Variables*****/
+
+:root {
+    /* Colors Declaration */
+    @each $color, $shades in $colors {
+        @each $shade, $value in $shades {
+            --za-cr-#{$color}-#{$shade}: #{$value};
+        }
+    }
+    
+    /* Font Family Declaration */
+    @each $ff, $keys in $font-family{
+        @each $key, $value in $keys{
+            --za-#{$ff}-#{$key}: #{$value};
+        }
+    }
+
+    /* Font Weight Declaration */
+    @each $fw, $keys in $font-weight{
+        @each $key, $value in $keys{
+            --za-#{$fw}-#{$key}: #{$value};
+        }
+    }
+
+    /*Font Size Declaration*/
+    // Desktop font sizes
+    @each $element, $size in $font-sizes {
+        --za-fs-#{$element}: #{$size};
+    }
+
+    // Tablet font sizes
+    @each $element, $size in $font-sizes {
+        --za-fs-#{$element}-tablet: #{$size * $tablet-scale};
+    }
+
+    // Mobile font sizes
+    @each $element, $size in $font-sizes {
+        --za-fs-#{$element}-mobile: #{$size * $mobile-scale};
+    }    
+}

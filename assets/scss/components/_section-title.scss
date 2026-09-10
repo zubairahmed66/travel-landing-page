@@ -1,0 +1,26 @@
+@use '../helper' as *;
+
+/*****Reuse Class*****/
+
+/*Section tite*/
+
+.za-section-top {
+    font-weight: var(--za-fw-medium);
+}
+
+.za-section-title {
+    font-size: 48px;
+    font-weight: var(--za-fw-semiBold);
+    color: var(--za-cr-darkBlue);
+    margin-bottom: 20px;
+
+    @media #{$sm, $md, $od, $lg} {
+        font-size: 35px;
+    }
+}
+
+.za-section-p {
+    color: var(--za-cr-darkBlue);
+}
+
+
