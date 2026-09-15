@@ -1,10 +1,10 @@
+// 01 # Header
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    // 01 # Header
+
     // ডম এলিমেন্ট সিলেকশন
-    const zaHeader = document.getElementById('za-HeaderArea');
-    const zaPrimaryNav = document.getElementById('za-HeaderMenuList');
-    // const zaMenuList
+    const zaHeader = document.getElementById('za-NavHeader');
+    const zaPrimaryNav = document.getElementById('za-PrimaryNavList');
     const zaBurgerBtn = document.getElementById('za-TriggerBurger');
     const zaMobilePanel = document.getElementById('za-MobilePanel');
     const zaPanelBody = document.getElementById('za-PanelBody');
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
         zaMobilePanel.classList.add('za-panel-open');
         zaBackdrop.classList.add('za-backdrop-visible');
         zaBurgerBtn.setAttribute('aria-expanded', 'true');
-        // document.body.classList.add('za-scroll-locked');
+        document.body.classList.add('za-scroll-locked');
         zaMobilePanel.focus();
     }
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         zaMobilePanel.classList.remove('za-panel-open');
         zaBackdrop.classList.remove('za-backdrop-visible');
         zaBurgerBtn.setAttribute('aria-expanded', 'false');
-        // document.body.classList.remove('za-scroll-locked');
+        document.body.classList.remove('za-scroll-locked');
     }
 
     // ইভেন্ট লিসেনার অ্যাসাইনমেন্ট
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
             closeDrawer();
         }
     });
-
+    
     // ==========================================================================
     // ৪. গ্লোবাল উইন্ডো ইভেন্টস (রিসাইজ, স্ক্রোল ও বাটন স্টেট টগল)
     // ==========================================================================
@@ -87,58 +87,4 @@ document.addEventListener('DOMContentLoaded', function () {
             e.target.classList.add('za-active');
         }
     });
-
-    //-- 
-    // Active Link State Toggle   
-
-    // Main Menu 
-    const menuItems = document.querySelectorAll('.za-header-menu-link');
-
-    menuItems.forEach(item => {
-
-        item.addEventListener('click', function () {
-
-            // সবাই থেকে active সরাও
-            menuItems.forEach(menu => {
-                menu.classList.remove('za-header-menu-active');
-            });
-
-            // যেটাতে click করেছি সেখানে active যোগ করো
-            this.classList.add('za-header-menu-active');
-
-        });
-
-    });
-    // Hero Area
-    // Date Selection
-      const dateInput = document.getElementById('za-date-input');
-
-    if (!dateInput) return;
-
-    dateInput.addEventListener('focus', () => {
-        dateInput.type = 'date';
-
-        if (typeof dateInput.showPicker === 'function') {
-            try {
-                dateInput.showPicker();
-            } catch (error) {}
-        }
-    });
-
-    dateInput.addEventListener('change', () => {
-        if (!dateInput.value) return;
-
-        const date = new Date(dateInput.value + 'T00:00:00');
-
-        const formattedDate = date.toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric'
-        });
-
-        // Date picker থেকে text format-এ ফিরে যাবে
-        dateInput.type = 'text';
-        dateInput.value = formattedDate;
-    });
-
 });

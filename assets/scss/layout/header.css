@@ -1,0 +1,388 @@
+/* @use '../helper'as *; */
+
+/*Header Area*/
+
+/* .za-header-left {
+    gap: 28px;
+} */
+
+/* .za-nav {
+    &-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: var(--za-nav-light-clr);
+        border-bottom: 1px solid var(--za-nav-bdr-clr);
+        transition: var(--za-nav-smooth-motion);
+
+        &.za-sticky-active {
+            box-shadow: var(--za-nav-box-shadow);
+            padding-block: 4px;
+        }
+    }
+} */
+
+/* .za-brand-logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--za-nav-dark-clr);
+    text-decoration: none;
+    flex-shrink: 0;
+} */
+
+/* .za-navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    margin-left: auto;
+    margin-right: 40px;
+} */
+
+
+/* হ্যামবার্গার ও অফক্যানভাস ড্রয়ার */
+.za-trigger-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 10001;
+    flex-shrink: 0;
+}
+
+/* .za-burger-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--za-cr-common-black);
+    border-radius: 4px;
+    transition: 0.25s ease;
+} */
+
+/* .za-trigger-burger[aria-expanded="true"] .za-burger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.za-trigger-burger[aria-expanded="true"] .za-burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.za-trigger-burger[aria-expanded="true"] .za-burger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+} */
+
+/* .za-desktop-navbar {
+    display: none;
+} */
+
+/* .za-mobile-panel {
+    position: fixed;
+    top: 0;
+    left: -340px;
+    width: 320px;
+    height: 100vh;
+    background-color: #e2e8f0;
+    z-index: 10000;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+} */
+
+/* .za-mobile-panel.za-panel-open {
+    left: 0;
+} */
+
+/* .za-panel-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+} */
+
+/* .za-panel-close {
+    font-size: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--za-nav-scnd-clr);
+} */
+
+/* .za-panel-body {
+    overflow-y: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+/* .za-panel-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--za-nav-overlay-clr);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--za-nav-smooth-motion);
+    backdrop-filter: blur(4px);
+} */
+
+/* .za-panel-backdrop.za-backdrop-visible {
+    opacity: 1;
+    visibility: visible;
+} */
+
+/* body.za-scroll-locked {
+    overflow: hidden;
+} */
+
+/* ==========================================================================
+   ৩. বেস নেভিগেশন ও মোবাইল ড্রপডাউন (Accordion Layout)
+   ========================================================================== */
+/* .za-main-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+} */
+
+/* .za-nav-item {
+    width: 100%;
+    position: relative;
+} */
+
+/* .za-nav-link {
+    text-decoration: none;
+    color: var(--za-nav-dark-clr);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    text-align: left;
+} */
+
+/* .za-arrow-icon {
+    font-size: 10px;
+    transition: var(--za-nav-smooth-motion);
+    pointer-events: none;
+} */
+
+/* .za-six-menu {
+    list-style: none;
+    padding-left: 14px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 4px;
+    width: 100%;
+} */
+
+/* .za-menu-link {
+    text-decoration: none;
+    color: var(--za-nav-scnd-clr);
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--za-nav-smooth-motion);
+} */
+/* 
+.za-menu-link:hover {
+    color: var(--za-nav-prime-clr);
+    background-color: #f1f5f9;
+} */
+
+/* মোবাইল ড্রপডাউন একটিভ ক্লাস */
+/* .za-has-nested.za-panel-nested-open>.za-six-menu {
+    display: flex !important;
+    animation: zaSlideDownFade 0.3s ease forwards;
+} */
+
+/* .za-has-nested.za-panel-nested-open>.za-nav-link .za-arrow-icon,
+.za-has-nested.za-panel-nested-open>.za-menu-link .za-arrow-icon {
+    transform: rotate(90deg);
+} */
+
+/* .za-drawer-actions-container {
+    display: none;
+} */
+
+/* @keyframes zaSlideDownFade {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+/* ==========================================================================
+   ৪. ডেক্সটপ মাল্টি-লেভেল ফ্লাই-আউট আর্কিটেকচার (Desktop - 992px+)
+   ========================================================================== */
+@media (min-width: 992px) {
+
+    /* .za-mobile-panel,
+    .za-panel-backdrop,
+    #za-MobileNavList {
+        display: none !important;
+        visibility: hidden !important;
+    } */
+
+    /* .za-trigger-burger {
+        display: none !important;
+    } */
+
+    /* .za-desktop-navbar {
+        display: block !important;
+        flex-grow: 1;
+    } */
+
+    /* .za-navbar-actions {
+        margin-left: 0;
+        margin-right: 0;
+        display: flex !important;
+    } */
+
+    /* .za-main-nav-list {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    /* .za-nav-item {
+        width: auto;
+    } */
+/* 
+    .za-nav-link {
+        width: auto;
+        padding: 8px 16px;
+        white-space: nowrap;
+    }
+
+    .za-six-menu {
+        display: block !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        position: absolute;
+        background-color: var(--za-nav-light-clr);
+        border: 1px solid var(--za-nav-bdr-clr);
+        box-shadow: var(--za-nav-box-shadow);
+        border-radius: 12px;
+        padding: 8px;
+        transition: var(--za-nav-smooth-motion);
+    }
+
+    /* লেভেল ১ পজিশন ও হোভার ব্রিজ */
+    .za-nav-item.za-has-nested>.za-six-menu {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(12px);
+        width: 240px;
+    }
+
+    .za-nav-item.za-has-nested::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 16px;
+        background: transparent;
+        display: block;
+        z-index: 10;
+    }
+
+    /* লেভেল ২ থেকে লেভেল ৬ পজিশন ও হোভার ব্রিজ */
+    .zsix-menu li.zhas-nested {
+        position: relative;
+    }
+
+    .zsix-menu li.zhas-nested>.zsix-menu {
+        top: 0;
+        left: 100%;
+        transform: translateX(12px) translateY(0);
+        width: 240px;
+        margin-top: -8px;
+    }
+
+    .zsix-menu li.zhas-nested::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 16px;
+        height: 100%;
+        background: transparent;
+        display: block;
+        z-index: 10;
+    }
+
+    .za-nav-item.za-has-nested:hover>.za-six-menu,
+    .za-six-menu li.za-has-nested:hover>.za-six-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    .za-has-nested:hover>.za-nav-link .za-arrow-icon,
+    .za-has-nested:hover>.za-menu-link .za-custom-arrow-icon {
+        transform: rotate(90deg);
+        color: var(--za-nav-prime-clr);
+    }
+
+    .za-has-nested.za-panel-nested-open .za-six-menu {
+        animation: none !important;
+    }
+}
+
+/* ==========================================================================
+   ৫. অতি ক্ষুদ্র স্ক্রিন লেআউট মেকানিজম (Extra Small Mobile - Under 460px)
+   ========================================================================== */
+@media (max-width: 460px) {
+    .za-trigger-burger {
+        margin-left: auto;
+    }
+
+    .za-drawer-actions-container {
+        display: flex !important;
+        gap: 12px;
+        margin-top: auto;
+        padding-top: 20px;
+        border-top: 1px solid var(--za-nav-bdr-clr);
+        width: 100%;
+    }
+
+    .za-drawer-actions-container .za-nav-action-button {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+    }
+} 

@@ -1,7 +1,7 @@
 /** Spacing Style **/
 
 /*--Margin Top--*/
-@for $z from 1 through 100 {
+@for $z from 1 through 300 {
     .mt-#{1 * $z}{margin-top: 1px * $z;}
 }
 
