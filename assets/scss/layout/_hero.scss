@@ -1,316 +1,385 @@
 @use '../helper'as *;
 
-/**/
-:root {
-  /* Colors */
-  --za-color-primary: #028054;
-  --za-color-primary-hover: #016643;
-  --za-color-primary-light: #e6f3ee;
-  --za-color-dark: #121829;
-  --za-color-body-text: #64748b;
-  --za-color-bg: #f8fafc;
-  --za-color-white: #ffffff;
-  --za-color-border: #e2e8f0;
-
-  /* Sidebar Card Badge Colors */
-  --za-card-badge-bg: #eef4ff;
-  --za-card-icon-bg: #dbeafe;
-  --za-card-icon-color: #028054;
-
-  /* Typography */
-  --za-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-  /* Shadows */
-  --za-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  --za-shadow-lg: 0 20px 35px -10px rgba(15, 23, 42, 0.08);
-
-  /* Radius */
-  --za-radius-sm: 10px;
-  --za-radius-md: 16px;
-  --za-radius-lg: 28px;
-
-  /* Transition */
-  --za-transition-fast: 0.25s ease;
-}
-
 /*Hero Area*/
+.za-hero {
+    &-area {
+        padding-top: 150px;
+        padding-bottom: 80px;
+    }
 
-/* 5. HERO SECTION STYLES */
-.za-hero-section {
-  padding-top: 40px;
-  padding-bottom: 80px;
+    &-container {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 48px;
+        align-items: center;
+
+        @media #{$dm3} {
+            grid-template-columns: 1fr;
+            gap: 56px;
+        }
+    }
+
+    &-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        line-height: 1.15;
+        color: var(--za-cr-text-darkNavyBlue);
+        margin-bottom: 24px;
+        letter-spacing: -1px;
+
+        &-accent {
+            color: var(--za-cr-text-deepGreen);
+        }
+
+        @media #{$dm5} {
+            font-size: 2.25rem;
+        }
+    }
+
+    &-description {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 500px;
+        margin-bottom: 40px;
+    }
+
+    &-visuals {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        @media #{$dm3} {
+            max-width: 680px;
+        }
+
+        @media #{$dm5} {
+            flex-direction: column;
+        }
+    }
+
+    &-img {
+        width: 420px;
+        height: 530px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    &-content {
+        @media #{$dm3} {
+            max-width: 680px;
+        }
+    }
 }
 
-.za-hero-container {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 48px;
-  align-items: center;
+// SEARCH FORM COMPONENT
+.za-search {
+    &-card {
+        background-color: var(--za-cr-common-white);
+        border-radius: var(--za-radius-md);
+        // "border-radius: var(--za-radius-md);" এই ব্যপাটা নিয়ে রাতে দেখবা বা গবেসনা করবো।  ‍[scss- Mixin] এর ব্যবহার
+        padding: 12px 16px;
+        box-shadow: var(--za-shadow-lg);
+        // "box-shadow: var(--za-shadow-lg);" এই ব্যপাটা নিয়ে রাতে দেখবা বা গবেসনা করবো।  ‍[scss- Mixin] এর ব্যবহার
+        max-width: 520px;
+        border: 1px solid var(--za-cr-theme-deepGreen50);
+    }
+
+    &-form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+
+        @media #{$dm4} {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    &-field {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 1;
+        padding: 8px 12px;
+
+        &-icon {
+            font-size: 1.1rem;
+            color: var(--za-cr-text-deepGreen);
+        }
+    }
+
+    &-field.za-date-field {
+        position: relative;
+    }
+
+    &-input {
+        width: 100%;
+        font-size: 0.95rem;
+        font-weight: 600;
+
+        background: transparent;
+
+        &::placeholder {
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        cursor: pointer;
+    }
+
+    &-divider {
+        width: 1px;
+        height: 36px;
+        background-color: var(--za-cr-theme-deepGreen50);
+
+        @media #{$dm4} {
+            width: 100%;
+            height: 1px;
+        }
+    }
+
+    &-submit {
+        background-color: var(--za-cr-theme-deepGreen);
+        color: var(--za-color-white);
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 14px 24px;
+        border-radius: var(--za-radius-sm);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background-color var(--za-transition-fast);
+        white-space: nowrap;
+
+        &:hover {
+            background-color: var(--za-cr-theme-deepGreen50);
+            color: var(--za-cr-common-black);
+        }
+
+        @media #{$dm4} {
+            width: 100%;
+            justify-content: center;
+        }
+
+    }
 }
 
-.za-hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--za-color-dark);
-  margin-bottom: 24px;
-  letter-spacing: -1px;
+.za-image {
+    &-wrapper {
+        border-radius: var(--za-radius-lg);
+        overflow: hidden;
+        box-shadow: var(--za-shadow-lg);
+        aspect-ratio: 4 / 5;
+
+        .za-image-swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover {
+            & .za-hero-img {
+                transform: scale(1.03);
+            }
+        }
+    }
 }
 
-.za-text-accent {
-  color: var(--za-color-primary);
+.swiper-wrapper {
+    width: 100%;
+    height: 100%;
 }
 
-.za-hero-description {
-  font-size: 1.05rem;
-  color: var(--za-color-body-text);
-  line-height: 1.7;
-  max-width: 500px;
-  margin-bottom: 40px;
+.swiper-slide {
+    width: 100%;
+    height: 100%;
 }
 
-/* 6. SEARCH FORM COMPONENT */
-.za-search-card {
-  background-color: var(--za-color-white);
-  border-radius: var(--za-radius-md);
-  padding: 12px 16px;
-  box-shadow: var(--za-shadow-lg);
-  max-width: 520px;
-  border: 1px solid rgba(226, 232, 240, 0.6);
+// /* Sidebar List */
+.za-activity {
+    &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media #{$dm5} {
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    &-card {
+        background-color: #edf3f9;
+        padding: 18px 22px;
+        border-radius: var(--za-radius-md);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 105px;
+        text-align: center;
+        transition: transform var(--za-transition-fast), box-shadow var(--za-transition-fast);
+
+        &.za-active {
+            box-shadow: var(--za-shadow-sm);
+            transform: translateX(4px);
+        }
+
+        &:hover {
+            transform: translateX(4px);
+            box-shadow: var(--za-shadow-sm);
+        }
+
+        @media #{$dm5} {
+            flex: 1 1 calc(50% - 12px);
+            width: auto;
+        }
+    }
+
+    &-icon {
+        &-box {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background-color: #dbeafe;
+            color: var(--za-color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+    }
+
+    &-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--za-color-dark);
+    }
 }
 
-.za-search-form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
 
-.za-search-field {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex: 1;
-  padding: 8px 12px;
-}
-
-.za-field-icon {
-  font-size: 1.1rem;
-  color: var(--za-color-primary);
-}
-
-.za-search-input {
-  width: 100%;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--za-color-dark);
-  background: transparent;
-}
-
-.za-search-input::placeholder {
-  color: #94a3b8;
-  font-weight: 600;
-}
-
-/* Ensure date picker matches text styling */
-.za-search-input[type="date"] {
-  color: var(--za-color-dark);
-  cursor: pointer;
-}
-
-/* Remove default webkit calendar indicator margin quirks */
-.za-search-input::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity var(--za-transition-fast);
-}
-
-.za-search-input::-webkit-calendar-picker-indicator:hover {
-  opacity: 1;
-}
-
-.za-search-divider {
-  width: 1px;
-  height: 36px;
-  background-color: var(--za-color-border);
-}
-
-.za-search-submit {
-  background-color: var(--za-color-primary);
-  color: var(--za-color-white);
-  font-size: 0.95rem;
-  font-weight: 700;
-  padding: 14px 24px;
-  border-radius: var(--za-radius-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: background-color var(--za-transition-fast);
-  white-space: nowrap;
-}
-
-.za-search-submit:hover {
-  background-color: var(--za-color-primary-hover);
-}
-
-/* 7. VISUAL GALLERY & ACTIVITY CARDS */
-.za-hero-visuals {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-}
-
-.za-image-wrapper {
-  flex: 1;
-  border-radius: var(--za-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--za-shadow-lg);
-  aspect-ratio: 4 / 5;
-}
-
-.za-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.za-image-wrapper:hover .za-hero-img {
-  transform: scale(1.03);
-}
-
-/* Sidebar List */
-.za-activity-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.za-activity-card {
-  background-color: #edf3f9;
-  padding: 18px 22px;
-  border-radius: var(--za-radius-md);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 105px;
-  text-align: center;
-  transition: transform var(--za-transition-fast), box-shadow var(--za-transition-fast);
-}
-
-.za-activity-card:hover {
-  transform: translateX(4px);
-  box-shadow: var(--za-shadow-sm);
-}
-
-.za-activity-icon-box {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background-color: #dbeafe;
-  color: var(--za-color-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-
-.za-activity-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--za-color-dark);
-}
-
-/* 8. RESPONSIVE MEDIA QUERIES */
-
-/* Laptop / Small Desktop Breakpoint */
-@media (max-width: 1024px) {
-  .za-hero-container {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-
-  .za-hero-content {
-    max-width: 680px;
-  }
-
-  .za-hero-visuals {
-    max-width: 680px;
-  }
-}
-
-/* Tablet Breakpoint (Mobile Drawer Navigation) */
-@media (max-width: 768px) {
-  .za-menu-toggle {
-    display: block;
-  }
-
-  .za-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
-    background-color: var(--za-color-white);
-    padding: 100px 32px 40px;
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    z-index: 90;
-  }
-
-  .za-nav.za-nav-open {
-    right: 0;
-  }
-
-  .za-nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .za-auth-actions {
+/* calendar */
+.za-calendar {
     display: none;
-    /* Can be cloned or moved into menu drawer */
-  }
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 0;
+    width: 310px;
+    padding: 16px;
+    background-color: var(--za-cr-common-white);
+    border: 1px solid var(--za-cr-theme-deepGreen50);
+    border-radius: 14px;
+    box-shadow: var(--za-shadow-lg);
+    z-index: 1000;
 
-  .za-search-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
+    &.is-open {
+        display: block;
+    }
 
-  .za-search-divider {
-    width: 100%;
-    height: 1px;
-  }
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
 
-  .za-search-submit {
-    width: 100%;
-    justify-content: center;
-  }
-}
+    &-title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--za-cr-text-darkNavyBlue);
+    }
 
-/* Mobile Breakpoint */
-@media (max-width: 576px) {
-  .za-hero-visuals {
-    flex-direction: column;
-  }
+    &-nav {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background-color: transparent;
+        color: var(--za-cr-text-deepGreen);
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
 
-  .za-activity-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-  }
+        &:hover {
+            background-color: var(--za-cr-theme-deepGreen50);
+            color: var(--za-color-primary);
+        }
+    }
 
-  .za-activity-card {
-    flex: 1 1 calc(50% - 12px);
-    width: auto;
-  }
+    &-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        margin-bottom: 8px;
 
-  .za-hero-title {
-    font-size: 2.25rem;
-  }
+        & span {
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--za-cr-text-deepGreen);
+        }
+    }
+
+    &-days {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 4px;
+    }
+
+    &-day {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        border: none;
+        border-radius: 50%;
+        background-color: transparent;
+        color: var(--za-cr-text-darkNavyBlue);
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease;
+
+        &:hover {
+            background-color: var(--za-cr-theme-deepGreen50);
+            color: var(--za-color-primary);
+        }
+
+        &.today {
+            border: 1px solid var(--za-color-primary);
+            color: var(--za-color-primary);
+        }
+
+        &.selected {
+            background-color: var(--za-color-primary);
+            color: var(--za-color-white);
+
+            &:hover {
+                background-color: var(--za-color-primary);
+                color: var(--za-color-white);
+            }
+        }
+
+        &.other-month {
+            color: #cbd5e1;
+            cursor: default;
+
+            &:hover {
+                background-color: transparent;
+                color: #cbd5e1;
+            }
+        }
+    }
+
 }

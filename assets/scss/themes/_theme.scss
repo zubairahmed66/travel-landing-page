@@ -65,7 +65,7 @@ html {
 
 body {
     background-color: var(--za-cr-white);
-    color: var(--za-cr-darkBlue);
+    color: var(--za-cr-text-darkSageGreen);
     font-size: var(--za-fs-body);
     font-family: var(--za-ff-body);
 }
@@ -82,7 +82,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1440px;
+    max-width: 1152px;
     margin: 0 auto;
     padding: 16px 24px;
 

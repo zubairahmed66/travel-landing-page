@@ -15,9 +15,13 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/meanmenu.css">
     <link rel="stylesheet" href="assets/css/slick.css">
+    <!-- Image Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+
 
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/scss/layout/hero.css">
 
 </head>
 
@@ -73,14 +77,14 @@
     <!-- Header Area End -->
 
     <!-- Hero Area Start -->
-    <section class="za-hero-section">
+    <section class="za-hero-area">
         <div class="za-container za-hero-container">
 
             <!-- Left Column: Text & Search Widget -->
             <div class="za-hero-content">
                 <h1 class="za-hero-title">
                     Travel Around <br>
-                    <span class="za-text-accent">The World</span>
+                    <span class="za-hero-title-accent">The World</span>
                 </h1>
 
                 <p class="za-hero-description">
@@ -95,7 +99,7 @@
 
                         <!-- Field: Destination -->
                         <div class="za-search-field">
-                            <i class="fa-solid fa-location-dot za-field-icon"></i>
+                            <i class="fa-solid fa-location-dot za-search-field-icon"></i>
                             <input type="text" class="za-search-input" placeholder="Destination"
                                 aria-label="Destination">
                         </div>
@@ -103,10 +107,45 @@
                         <div class="za-search-divider"></div>
 
                         <!-- Field: Date -->
-                        <div class="za-search-field">
-                            <i class="fa-regular fa-calendar-days za-field-icon"></i>
+                        <div class="za-search-field za-date-field">
+
+                            <i class="fa-regular fa-calendar-days za-search-field-icon"></i>
                             <input type="text" class="za-search-input" id="za-date-input" placeholder="Date"
-                                aria-label="Date">
+                                aria-label="Date" autocomplete="off" readonly>
+
+                            <div class="za-calendar" id="za-calendar">
+
+                                <!-- Calendar Header -->
+                                <div class="za-calendar-header">
+
+                                    <button type="button" class="za-calendar-nav" id="za-calendar-prev"
+                                        aria-label="Previous month">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                    <div class="za-calendar-title" id="za-calendar-title">
+                                    </div>
+
+                                    <button type="button" class="za-calendar-nav" id="za-calendar-next"
+                                        aria-label="Next month">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+
+                                </div>
+
+                                <div class="za-calendar-weekdays">
+                                    <span>Sun</span>
+                                    <span>Mon</span>
+                                    <span>Tue</span>
+                                    <span>Wed</span>
+                                    <span>Thu</span>
+                                    <span>Fri</span>
+                                    <span>Sat</span>
+                                </div>
+
+                                <div class="za-calendar-days" id="za-calendar-days">
+                                </div>
+
+                            </div>
                         </div>
 
                         <!-- Action Button -->
@@ -119,39 +158,57 @@
             </div>
 
             <!-- Right Column: Featured Image & Activity Badges -->
-            <div class="za-hero-visuals">
 
+            <div class="za-hero-visuals">
                 <!-- Main Featured Image -->
-                <div class="za-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
-                        alt="Mountain Lake Adventure" class="za-hero-img">
+                <div class="za-image-wrapper za-slider-image">
+                    <div class="swiper za-image-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- SLIDE 1 -->
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80"
+                                    alt="Mountain Lake Adventure" class="za-hero-img"> </div>
+                            <!-- SLIDE 2 -->
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Sky" class="za-hero-img"> </div>
+                            <!-- SLIDE 3 -->
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Mountain Landscape" class="za-hero-img"> </div>
+                            <!-- SLIDE 4 -->
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80"
+                                    alt="Forest" class="za-hero-img"> </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Vertical Activity Sidebar List -->
                 <div class="za-activity-list">
 
-                    <div class="za-activity-card">
+                    <div class="za-activity-card" data-slide="0">
                         <div class="za-activity-icon-box">
                             <i class="fa-solid fa-person-walking"></i>
                         </div>
                         <span class="za-activity-label">Trekking</span>
                     </div>
 
-                    <div class="za-activity-card">
+                    <div class="za-activity-card" data-slide="1">
                         <div class="za-activity-icon-box">
                             <i class="fa-solid fa-water"></i>
                         </div>
                         <span class="za-activity-label">Rafting</span>
                     </div>
 
-                    <div class="za-activity-card">
+                    <div class="za-activity-card" data-slide="2">
                         <div class="za-activity-icon-box">
                             <i class="fa-solid fa-wind"></i>
                         </div>
                         <span class="za-activity-label">Windsurfing</span>
                     </div>
 
-                    <div class="za-activity-card">
+                    <div class="za-activity-card" data-slide="3">
                         <div class="za-activity-icon-box">
                             <i class="fa-solid fa-parachute-box"></i>
                         </div>
@@ -159,7 +216,6 @@
                     </div>
 
                 </div>
-
             </div>
 
         </div>
@@ -175,6 +231,8 @@
     <script src="assets/js/meanmenu.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/slick.js"></script>
+    <!-- Image Slider  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
     <!-- Theme js -->
     <script src="assets/js/main.js"></script>

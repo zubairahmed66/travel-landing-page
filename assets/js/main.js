@@ -1,26 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
     // 01 # Header
-    // ডম এলিমেন্ট সিলেকশন
     const zaHeader = document.getElementById('za-HeaderArea');
     const zaPrimaryNav = document.getElementById('za-HeaderMenuList');
-    // const zaMenuList
     const zaBurgerBtn = document.getElementById('za-TriggerBurger');
     const zaMobilePanel = document.getElementById('za-MobilePanel');
     const zaPanelBody = document.getElementById('za-PanelBody');
     const zaBackdrop = document.getElementById('za-PanelBackdrop');
     const zaPanelClose = document.getElementById('za-PanelClose');
 
-    // ==========================================================================
-    // ১. নোড ক্লোনিং মেকানি
-    // ==========================================================================
     if (zaPrimaryNav && zaPanelBody) {
-        // ডেক্সটপ মেনু ক্লোন করা হচ্ছে
         const clonedNav = zaPrimaryNav.cloneNode(true);
         clonedNav.id = 'za-MobileNavList';
         zaPanelBody.appendChild(clonedNav);
 
-        // হেডারের বাটন কন্টেইনার ক্লোন করে মোবাইল ড্রয়ারের নিচে পুশ
         const originalActions = document.querySelector('.za-navbar-actions');
         if (originalActions) {
             const clonedActions = originalActions.cloneNode(true);
@@ -30,14 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // ==========================================================================
-    // ২. ড্রয়ার ওপেন/ক্লোজ স্টেট মেশিন
-    // ==========================================================================
     function openDrawer() {
         zaMobilePanel.classList.add('za-panel-open');
         zaBackdrop.classList.add('za-backdrop-visible');
         zaBurgerBtn.setAttribute('aria-expanded', 'true');
-        // document.body.classList.add('za-scroll-locked');
         zaMobilePanel.focus();
     }
 
@@ -45,26 +34,20 @@ document.addEventListener('DOMContentLoaded', function () {
         zaMobilePanel.classList.remove('za-panel-open');
         zaBackdrop.classList.remove('za-backdrop-visible');
         zaBurgerBtn.setAttribute('aria-expanded', 'false');
-        // document.body.classList.remove('za-scroll-locked');
     }
 
-    // ইভেন্ট লিসেনার অ্যাসাইনমেন্ট
     zaBurgerBtn.addEventListener('click', function () {
         zaMobilePanel.classList.contains('za-panel-open') ? closeDrawer() : openDrawer();
     });
     zaPanelClose.addEventListener('click', closeDrawer);
     zaBackdrop.addEventListener('click', closeDrawer);
 
-    // ESC কি প্রেস ডিটেকশন
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && zaMobilePanel.classList.contains('za-panel-open')) {
             closeDrawer();
         }
     });
 
-    // ==========================================================================
-    // ৪. গ্লোবাল উইন্ডো ইভেন্টস (রিসাইজ, স্ক্রোল ও বাটন স্টেট টগল)
-    // ==========================================================================
     window.addEventListener('resize', function () {
         if (window.innerWidth >= 992 && zaMobilePanel.classList.contains('za-panel-open')) {
             closeDrawer();
@@ -79,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // অ্যাকশন বাটন একটিভ স্টেট টগল লিসেনার
     document.addEventListener('click', function (e) {
         if (e.target.classList.contains('za-btn')) {
             const allActionBtns = document.querySelectorAll('.za-btn');
@@ -88,57 +70,219 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    //-- 
-    // Active Link State Toggle   
-
     // Main Menu 
     const menuItems = document.querySelectorAll('.za-header-menu-link');
 
     menuItems.forEach(item => {
 
         item.addEventListener('click', function () {
-
-            // সবাই থেকে active সরাও
             menuItems.forEach(menu => {
                 menu.classList.remove('za-header-menu-active');
             });
 
-            // যেটাতে click করেছি সেখানে active যোগ করো
             this.classList.add('za-header-menu-active');
 
         });
 
     });
-    // Hero Area
-    // Date Selection
-      const dateInput = document.getElementById('za-date-input');
 
-    if (!dateInput) return;
+    const dateInput = document.getElementById('za-date-input');
+    const calendar = document.getElementById('za-calendar');
+    const calendarTitle = document.getElementById('za-calendar-title');
+    const calendarDays = document.getElementById('za-calendar-days');
+    const previousButton = document.getElementById('za-calendar-prev');
+    const nextButton = document.getElementById('za-calendar-next');
 
-    dateInput.addEventListener('focus', () => {
-        dateInput.type = 'date';
+    if (
+        dateInput &&
+        calendar &&
+        calendarTitle &&
+        calendarDays &&
+        previousButton &&
+        nextButton
+    ) {
 
-        if (typeof dateInput.showPicker === 'function') {
-            try {
-                dateInput.showPicker();
-            } catch (error) {}
+
+        let currentDate = new Date();
+        let selectedDate = null;
+        const monthNames = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+
+        function renderCalendar() {
+
+            const year = currentDate.getFullYear();
+
+            const month = currentDate.getMonth();
+
+            calendarTitle.textContent =
+                `${monthNames[month]} ${year}`;
+
+            const firstDay =
+                new Date(year, month, 1).getDay();
+
+            const totalDays =
+                new Date(year, month + 1, 0).getDate();
+            const previousMonthTotalDays =
+                new Date(year, month, 0).getDate();
+
+            calendarDays.innerHTML = '';
+            for (
+                let i = firstDay - 1; i >= 0; i--
+            ) {
+                const day =
+                    previousMonthTotalDays - i;
+                const button =
+                    document.createElement('button');
+                button.type = 'button';
+                button.className =
+                    'za-calendar-day other-month';
+                button.textContent = day;
+                calendarDays.appendChild(button);
+            }
+
+            for (
+                let day = 1; day <= totalDays; day++
+            ) {
+                const button =
+                    document.createElement('button');
+                button.type = 'button';
+                button.className =
+                    'za-calendar-day';
+                button.textContent = day;
+                const today = new Date();
+                const isToday =
+                    day === today.getDate() &&
+                    month === today.getMonth() &&
+                    year === today.getFullYear();
+                if (isToday) {
+                    button.classList.add('today');
+                }
+
+                if (selectedDate) {
+
+                    const isSelected =
+                        day === selectedDate.getDate() &&
+                        month === selectedDate.getMonth() &&
+                        year === selectedDate.getFullYear();
+
+                    if (isSelected) {
+                        button.classList.add('selected');
+                    }
+                }
+
+
+                button.addEventListener('click', () => {
+                    selectedDate =
+                        new Date(year, month, day);
+
+                    const formattedDate =
+                        selectedDate.toLocaleDateString(
+                            'en-US', {
+                                month: 'short',
+                                day: 'numeric',
+                                year: 'numeric'
+                            }
+                        );
+
+                    dateInput.value = formattedDate;
+
+                    calendar.classList.remove('is-open');
+                    renderCalendar();
+                });
+                calendarDays.appendChild(button);
+            }
+        }
+
+        dateInput.addEventListener('click', (event) => {
+            event.stopPropagation();
+            calendar.classList.toggle('is-open');
+            renderCalendar();
+        });
+
+        previousButton.addEventListener('click', (event) => {
+
+            event.stopPropagation();
+            currentDate.setMonth(
+                currentDate.getMonth() - 1
+            );
+            renderCalendar();
+        });
+        nextButton.addEventListener('click', (event) => {
+
+            event.stopPropagation();
+            currentDate.setMonth(
+                currentDate.getMonth() + 1
+            );
+            renderCalendar();
+        });
+        calendar.addEventListener('click', (event) => {
+
+            event.stopPropagation();
+        });
+        document.addEventListener('click', () => {
+
+            calendar.classList.remove('is-open');
+        });
+        renderCalendar();
+
+    }
+
+    //--- Image Slider
+    const zaActivityCards = document.querySelectorAll(".za-activity-card");
+    const zaHeroSwiper = new Swiper(".za-image-swiper", {
+        direction: "vertical",
+        slidesPerView: 1,
+        speed: 700,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        mousewheel: {
+            forceToAxis: true
+        },
+        keyboard: {
+            enabled: true
+        },
+        on: {
+            init: function () {
+                zaUpdateActivity(this.activeIndex);
+            },
+
+            slideChange: function () {
+                zaUpdateActivity(this.activeIndex);
+            }
         }
     });
 
-    dateInput.addEventListener('change', () => {
-        if (!dateInput.value) return;
-
-        const date = new Date(dateInput.value + 'T00:00:00');
-
-        const formattedDate = date.toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric'
+    zaActivityCards.forEach((card) => {
+        card.addEventListener("click", function () {
+            const zaSlideIndex = Number(this.dataset.slide);
+            zaHeroSwiper.slideTo(zaSlideIndex);
         });
 
-        // Date picker থেকে text format-এ ফিরে যাবে
-        dateInput.type = 'text';
-        dateInput.value = formattedDate;
     });
 
+
+    function zaUpdateActivity(activeIndex) {
+        zaActivityCards.forEach((card) => {
+            const zaCardIndex = Number(card.dataset.slide);
+            if (zaCardIndex === activeIndex) {
+                card.classList.add("za-active");
+            } else {
+                card.classList.remove("za-active");
+            }
+        });
+    }
 });

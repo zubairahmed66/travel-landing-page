@@ -13,24 +13,21 @@
     transition: var(--za-nav-smooth-motion);
 
     &-primary {
-        // za-btn
-        background-color: var(--za-nav-prime-clr);
-        color: var(--za-nav-light-clr);
-        &:hover{
-            background-color: aquamarine;
+        color: var(--za-cr-text-darkNavyBlue);
+
+        &:hover {
+            background-color: var(--za-cr-theme-deepGreen);
+            color: var(--za-cr-common-white);
         }
     }
 
     &-secondary {
-        // za-btn
         background-color: transparent;
-        // border-color: var(--za-nav-scnd-clr);
         color: #00422B;
     }
+
     &.za-active {
-    // za-btn
-    background-color: #10B981 !important;
-    color: #00422B !important;
-    // border-color: var(--za-nav-dark-clr) !important;
+        background-color: var(--za-cr-theme-deepGreen);
+        color: var(--za-cr-common-white);
     }
 }
