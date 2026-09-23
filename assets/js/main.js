@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     'use strict';
-    // 01 # Header
+    // 01 # Header Area
     const zaHeader = document.getElementById('za-HeaderArea');
     const zaPrimaryNav = document.getElementById('za-HeaderMenuList');
     const zaBurgerBtn = document.getElementById('za-TriggerBurger');
@@ -86,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
+    // 02 # Hero Area
     const dateInput = document.getElementById('za-date-input');
     const calendar = document.getElementById('za-calendar');
     const calendarTitle = document.getElementById('za-calendar-title');
