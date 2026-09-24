@@ -20,11 +20,12 @@
         @media #{$md,$lg} {
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-        } 
-             @media #{$sm,$xs} {
+        }
+
+        @media #{$sm,$xs} {
             grid-template-columns: 1fr;
             gap: 30px;
-        }   
+        }
     }
 
     &-title {
@@ -76,7 +77,10 @@
         transition: transform 0.5s ease;
 
         @media #{$xs,$sm,$md,$lg} {
-            width: 350px;
+            // width: 350px;
+            // width: 310px;
+            width: 100%;
+            // width:  clamp(2.5rem, 5vw, 4rem);
         }
     }
 
@@ -98,6 +102,13 @@
         // "box-shadow: var(--za-shadow-lg);" এই ব্যপাটা নিয়ে রাতে দেখবা বা গবেসনা করবো।  ‍[scss- Mixin] এর ব্যবহার
         max-width: 520px;
         border: 1px solid var(--za-cr-theme-deepGreen50);
+
+        @media #{$xs,$sm,$md,$lg} {
+            // width: 350px;
+            // width: 310px;
+            max-width: 100%;
+            // width:  clamp(2.5rem, 5vw, 4rem);
+        }
     }
 
     &-form {
@@ -241,7 +252,7 @@
         transition: transform var(--za-transition-fast), box-shadow var(--za-transition-fast);
 
         @media #{$lg} {
-             padding: 14px 18px;
+            padding: 14px 18px;
         }
 
         &.za-active {

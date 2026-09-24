@@ -4635,7 +4635,7 @@ body.za-scroll-locked {
 }
 @media (max-width: 767px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
   .za-hero-img {
-    width: 350px;
+    width: 100%;
   }
 }
 @media (max-width: 1024px) {
@@ -4651,6 +4651,11 @@ body.za-scroll-locked {
   box-shadow: var(--za-shadow-lg);
   max-width: 520px;
   border: 1px solid var(--za-cr-theme-deepGreen50);
+}
+@media (max-width: 767px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
+  .za-search-card {
+    max-width: 100%;
+  }
 }
 .za-search-form {
   display: flex;
