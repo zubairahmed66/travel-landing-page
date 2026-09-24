@@ -250,9 +250,9 @@ document.addEventListener('DOMContentLoaded', function () {
             delay: 3000,
             disableOnInteraction: false
         },
-        mousewheel: {
-            forceToAxis: true
-        },
+        // mousewheel: {
+        //     forceToAxis: true
+        // },
         keyboard: {
             enabled: true
         },

@@ -91,8 +91,15 @@ body {
             display: none !important;
         }
     }
+
+    //    @media #{$xl} {
+    //         height: 650px;
+    //    }
 }
 
 .container {
     max-width: 1152px;
+    //    @media #{$xl} {
+    //         height: 650px;
+    //    }
 }
