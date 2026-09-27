@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <!-- Image Slider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" /> -->
 
 
     <!-- Theme CSS -->
@@ -223,7 +222,6 @@
     <!-- Hero Area End -->
 
     <!-- Brand Area Start -->
-    <!-- ================= BRAND STRIP SECTION ================= -->
     <section class="za-brand-section" id="za-brand-section" aria-label="Brand Overview">
         <div class="container">
             <div class="row align-items-center za-brand-row">
@@ -410,14 +408,16 @@
                             </div>
 
                             <!-- Floating Testimonial / Rating Badge -->
-                            <div class="za-rating-badge">
-                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-                                    alt="Cravic Mario" class="za-rating-avatar">
-                                <div class="za-rating-info">
-                                    <span class="za-rating-name">Cravic Mario</span>
-                                    <span class="za-rating-stars">
-                                        <i class="fa-solid fa-star"></i> Give rating 4.9
-                                    </span>
+                            <div class="d-none d-sm-block">
+                                <div class="za-rating-badge">
+                                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                                        alt="Cravic Mario" class="za-rating-avatar">
+                                    <div class="za-rating-info">
+                                        <span class="za-rating-name">Cravic Mario</span>
+                                        <span class="za-rating-stars">
+                                            <i class="fa-solid fa-star"></i> Give rating 4.9
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
 
@@ -446,9 +446,8 @@
     <!-- Choose Area End -->
 
     <!-- Destinations Area Start -->
-    <!-- ================= EXPLORE DESTINATIONS SECTION ================= -->
     <section class="za-destinations-section" id="za-destinations-section" aria-label="Popular Destinations">
-        <div class="container za-destinations-container">
+        <div class="container">
 
             <!-- Section Top Header & Navigation Controls -->
             <div class="row align-items-end za-destinations-header-row mb-5">
@@ -483,8 +482,10 @@
                     <div class="swiper-slide za-destination-slide">
                         <div class="za-destination-card">
                             <div class="za-card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80"
-                                    alt="Isle of Skye, Scotland" class="za-card-img">
+                                <div class="za-card-image">
+                                    <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80"
+                                        alt="Isle of Skye, Scotland" class="za-card-img">
+                                </div>
                                 <span class="za-price-badge">$45</span>
                             </div>
                             <div class="za-card-body">
@@ -500,8 +501,10 @@
                     <div class="swiper-slide za-destination-slide">
                         <div class="za-destination-card">
                             <div class="za-card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80"
-                                    alt="Malé, Maldives" class="za-card-img">
+                                <div class="za-card-image">
+                                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80"
+                                        alt="Malé, Maldives" class="za-card-img">
+                                </div>
                                 <span class="za-price-badge">$45</span>
                             </div>
                             <div class="za-card-body">
@@ -517,8 +520,10 @@
                     <div class="swiper-slide za-destination-slide">
                         <div class="za-destination-card">
                             <div class="za-card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
-                                    alt="Dolomites, Italy" class="za-card-img">
+                                <div class="za-card-image">
+                                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+                                        alt="Dolomites, Italy" class="za-card-img">
+                                </div>
                                 <span class="za-price-badge">$45</span>
                             </div>
                             <div class="za-card-body">
@@ -534,8 +539,10 @@
                     <div class="swiper-slide za-destination-slide">
                         <div class="za-destination-card">
                             <div class="za-card-image-wrapper">
-                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
-                                    alt="Bali, Indonesia" class="za-card-img">
+                                <div class="za-card-image">
+                                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                                        alt="Bali, Indonesia" class="za-card-img">
+                                </div>
                                 <span class="za-price-badge">$50</span>
                             </div>
                             <div class="za-card-body">
@@ -554,115 +561,116 @@
     </section>
     <!-- Destinations Area End -->
 
-    <!-- Experience Area Start -->
-    <!-- ================= EXPERIENCE SECTION ================= -->
-    <section class="za-experience-section" id="za-experience-section" aria-label="Our Experience and Services">
-        <div class="container za-experience-container">
-            <div class="row align-items-center za-experience-row g-5">
+       <!-- Experience Area Start -->
+       <!-- ================= EXPERIENCE SECTION ================= -->
+       <section class="za-experience-section" id="za-experience-section" aria-label="Our Experience and Services">
+           <div class="container">
+               <div class="row align-items-center za-experience-row g-5">
 
-                <!-- Left Column: Visual Image with Floating Stats Card -->
-                <div class="col-lg-6 za-experience-visual-col">
-                    <div class="za-visual-wrapper">
+                   <!-- Left Column: Visual Image with Floating Stats Card -->
+                   <div class="col-lg-6 za-experience-visual-col">
+                       <div class="za-visual-wrapper">
 
-                        <!-- Main Hero Image Box -->
-                        <div class="za-main-img-card">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
-                                alt="Smiling traveler with sunglasses and backpack" class="za-main-img">
-                        </div>
+                           <!-- Main Hero Image Box -->
+                           <div class="za-main-img-card">
+                               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                                   alt="Smiling traveler with sunglasses and backpack" class="za-main-img">
+                           </div>
 
-                        <!-- Overlay Stats Glass Card -->
-                        <div class="za-stats-card">
+                           <!-- Overlay Stats Glass Card -->
+                           <div class="za-stats-card">
 
-                            <!-- Stat Item 1 -->
-                            <div class="za-stat-item">
-                                <div class="za-stat-number-wrap">
-                                    <span class="za-stat-number" data-target="10">0</span><span
-                                        class="za-stat-suffix">+</span>
-                                </div>
-                                <span class="za-stat-label">YEARS EXP</span>
-                            </div>
+                               <!-- Stat Item 1 -->
+                               <div class="za-stat-item">
+                                   <div class="za-stat-number-wrap">
+                                       <span class="za-stat-number" data-target="10">0</span><span
+                                           class="za-stat-suffix">+</span>
+                                   </div>
+                                   <span class="za-stat-label">YEARS EXP</span>
+                               </div>
 
-                            <div class="za-stat-divider"></div>
+                               <div class="za-stat-divider"></div>
 
-                            <!-- Stat Item 2 -->
-                            <div class="za-stat-item">
-                                <div class="za-stat-number-wrap">
-                                    <span class="za-stat-number" data-target="2">0</span><span
-                                        class="za-stat-suffix">k+</span>
-                                </div>
-                                <span class="za-stat-label">DESTINATION</span>
-                            </div>
+                               <!-- Stat Item 2 -->
+                               <div class="za-stat-item">
+                                   <div class="za-stat-number-wrap">
+                                       <span class="za-stat-number" data-target="2">0</span><span
+                                           class="za-stat-suffix">k+</span>
+                                   </div>
+                                   <span class="za-stat-label">DESTINATION</span>
+                               </div>
 
-                            <div class="za-stat-divider"></div>
+                               <div class="za-stat-divider"></div>
 
-                            <!-- Stat Item 3 -->
-                            <div class="za-stat-item">
-                                <div class="za-stat-number-wrap">
-                                    <span class="za-stat-number" data-target="15">0</span><span
-                                        class="za-stat-suffix">k+</span>
-                                </div>
-                                <span class="za-stat-label">HAPPY USERS</span>
-                            </div>
+                               <!-- Stat Item 3 -->
+                               <div class="za-stat-item">
+                                   <div class="za-stat-number-wrap">
+                                       <span class="za-stat-number" data-target="15">0</span><span
+                                           class="za-stat-suffix">k+</span>
+                                   </div>
+                                   <span class="za-stat-label">HAPPY USERS</span>
+                               </div>
 
-                        </div>
+                           </div>
 
-                    </div>
-                </div>
+                       </div>
+                   </div>
 
-                <!-- Right Column: Content, Key Points & CTA -->
-                <div class="col-lg-6 za-experience-content-col">
+                   <!-- Right Column: Content, Key Points & CTA -->
+                   <div class="col-lg-6 za-experience-content-col">
 
-                    <!-- Section Title -->
-                    <h2 class="za-experience-title">
-                        With Our Experience <br class="d-none d-sm-block">We Will Serve You
-                    </h2>
+                       <!-- Section Title -->
+                       <h2 class="za-experience-title">
+                           With Our Experience <br class="d-none d-sm-block">We Will Serve You
+                       </h2>
 
-                    <!-- Description -->
-                    <p class="za-experience-desc">
-                        We have been moving excellent encounters for a considerable length of time through our
-                        cutting-edge planned occasion bundles and other fundamental foundations. Our team ensures that
-                        every detail of your journey is handled with professional care and a personal touch.
-                    </p>
+                       <!-- Description -->
+                       <p class="za-experience-desc">
+                           We have been moving excellent encounters for a considerable length of time through our
+                           cutting-edge planned occasion bundles and other fundamental foundations. Our team ensures
+                           that
+                           every detail of your journey is handled with professional care and a personal touch.
+                       </p>
 
-                    <!-- Feature List with Checkmarks -->
-                    <ul class="za-experience-features">
+                       <!-- Feature List with Checkmarks -->
+                       <ul class="za-experience-features">
 
-                        <li class="za-feature-check-item">
-                            <div class="za-check-icon-wrap">
-                                <i class="fa-solid fa-check za-check-icon"></i>
-                            </div>
-                            <span class="za-feature-text">Luxury & Comfort Accommodation</span>
-                        </li>
+                           <li class="za-feature-check-item">
+                               <div class="za-check-icon-wrap">
+                                   <i class="fa-solid fa-check za-check-icon"></i>
+                               </div>
+                               <span class="za-feature-text">Luxury & Comfort Accommodation</span>
+                           </li>
 
-                        <li class="za-feature-check-item">
-                            <div class="za-check-icon-wrap">
-                                <i class="fa-solid fa-check za-check-icon"></i>
-                            </div>
-                            <span class="za-feature-text">Private & Professional Tour Guide</span>
-                        </li>
+                           <li class="za-feature-check-item">
+                               <div class="za-check-icon-wrap">
+                                   <i class="fa-solid fa-check za-check-icon"></i>
+                               </div>
+                               <span class="za-feature-text">Private & Professional Tour Guide</span>
+                           </li>
 
-                        <li class="za-feature-check-item">
-                            <div class="za-check-icon-wrap">
-                                <i class="fa-solid fa-check za-check-icon"></i>
-                            </div>
-                            <span class="za-feature-text">24/7 Premium Customer Service</span>
-                        </li>
+                           <li class="za-feature-check-item">
+                               <div class="za-check-icon-wrap">
+                                   <i class="fa-solid fa-check za-check-icon"></i>
+                               </div>
+                               <span class="za-feature-text">24/7 Premium Customer Service</span>
+                           </li>
 
-                    </ul>
+                       </ul>
 
-                    <!-- CTA Button -->
-                    <div class="za-experience-cta">
-                        <a href="#explore" class="za-cta-btn">Explore More</a>
-                    </div>
+                       <!-- CTA Button -->
+                       <div class="za-experience-cta">
+                           <a href="#explore" class="za-cta-btn">Explore More</a>
+                       </div>
 
-                </div>
+                   </div>
 
-            </div>
-        </div>
-    </section>
-    <!-- Experience Area End -->
+               </div>
+           </div>
+       </section>
+       <!-- Experience Area End -->
 
-    <!-- Customers Area Start -->
+          <!-- Customers Area Start -->
     <!-- ================= CUSTOMERS / TESTIMONIALS SECTION ================= -->
     <section class="za-customers-section" id="za-customers-section" aria-label="What Our Customers Say About Us">
         <div class="container za-customers-container">
@@ -798,7 +806,7 @@
     </section>
     <!-- Customers Area End -->
 
-    <!-- Promo Banner Area Start -->
+        <!-- Promo Banner Area Start -->
     <!-- ================= PROMO BANNER SECTION ================= -->
     <section class="za-promo-section" id="za-promo-section" aria-label="Promotional Discount Banner">
         <div class="container za-promo-container">
@@ -833,105 +841,106 @@
     <!-- Promo Banner Area End -->
 
     <!-- Footer Area Start -->
-<!-- ================= FOOTER SECTION ================= -->
-<footer class="za-footer-section" role="contentinfo">
-  <div class="container za-footer-container">
-    
-    <!-- Top Main Footer Content -->
-    <div class="row za-footer-main-row">
-      
-      <!-- Brand Profile & Social Links Column -->
-      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 za-footer-col-brand">
-        <h3 class="za-footer-brand-title">Travelzs</h3>
-        <p class="za-footer-brand-desc">
-          Enjoy the touring with Travelzs. We bring you the most exquisite travel experiences across the globe.
-        </p>
-        
-        <!-- Social Icons -->
-        <div class="za-footer-socials">
-          <a href="#" class="za-social-icon" aria-label="Support / Smile">
-            <i class="fa-regular fa-face-smile"></i>
-          </a>
-          <a href="#" class="za-social-icon" aria-label="Website Link">
-            <i class="fa-solid fa-link"></i>
-          </a>
-          <a href="#" class="za-social-icon" aria-label="Email Us">
-            <i class="fa-regular fa-envelope"></i>
-          </a>
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="za-footer-section" role="contentinfo">
+        <div class="container za-footer-container">
+
+            <!-- Top Main Footer Content -->
+            <div class="row za-footer-main-row">
+
+                <!-- Brand Profile & Social Links Column -->
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0 za-footer-col-brand">
+                    <h3 class="za-footer-brand-title">Travelzs</h3>
+                    <p class="za-footer-brand-desc">
+                        Enjoy the touring with Travelzs. We bring you the most exquisite travel experiences across the
+                        globe.
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="za-footer-socials">
+                        <a href="#" class="za-social-icon" aria-label="Support / Smile">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </a>
+                        <a href="#" class="za-social-icon" aria-label="Website Link">
+                            <i class="fa-solid fa-link"></i>
+                        </a>
+                        <a href="#" class="za-social-icon" aria-label="Email Us">
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Menu Links Container -->
+                <div class="col-lg-8 col-md-12">
+                    <div class="row">
+
+                        <!-- Column 1: Menu -->
+                        <div class="col-sm-4 col-6 mb-4 mb-sm-0 za-footer-col">
+                            <h4 class="za-footer-widget-title">Menu</h4>
+                            <ul class="za-footer-links">
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#destination">Destination</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 2: Booking Plan -->
+                        <div class="col-sm-4 col-6 mb-4 mb-sm-0 za-footer-col">
+                            <h4 class="za-footer-widget-title">Booking Plan</h4>
+                            <ul class="za-footer-links">
+                                <li><a href="#personal-trip">Personal Trip</a></li>
+                                <li><a href="#group-trip">Group Trip</a></li>
+                                <li><a href="#corporate-trip">Corporate Trip</a></li>
+                                <li><a href="#family-trip">Family Trip</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Column 3: Further Information -->
+                        <div class="col-sm-4 col-12 za-footer-col">
+                            <h4 class="za-footer-widget-title">Further Information</h4>
+                            <ul class="za-footer-links">
+                                <li><a href="#terms">Terms & Condition</a></li>
+                                <li><a href="#privacy">Privacy Policy</a></li>
+                                <li><a href="#cookies">Cookie Policy</a></li>
+                                <li><a href="#help">Help Center</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Divider Line -->
+            <hr class="za-footer-divider">
+
+            <!-- Bottom Copyright & Legal Links -->
+            <div class="row align-items-center za-footer-bottom">
+                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                    <p class="za-copyright-text">
+                        2022 PT. T - Travelzs All right reserved
+                    </p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="za-legal-links">
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Condition</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
-
-      <!-- Footer Menu Links Container -->
-      <div class="col-lg-8 col-md-12">
-        <div class="row">
-          
-          <!-- Column 1: Menu -->
-          <div class="col-sm-4 col-6 mb-4 mb-sm-0 za-footer-col">
-            <h4 class="za-footer-widget-title">Menu</h4>
-            <ul class="za-footer-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#destination">Destination</a></li>
-              <li><a href="#blog">Blog</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 2: Booking Plan -->
-          <div class="col-sm-4 col-6 mb-4 mb-sm-0 za-footer-col">
-            <h4 class="za-footer-widget-title">Booking Plan</h4>
-            <ul class="za-footer-links">
-              <li><a href="#personal-trip">Personal Trip</a></li>
-              <li><a href="#group-trip">Group Trip</a></li>
-              <li><a href="#corporate-trip">Corporate Trip</a></li>
-              <li><a href="#family-trip">Family Trip</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Further Information -->
-          <div class="col-sm-4 col-12 za-footer-col">
-            <h4 class="za-footer-widget-title">Further Information</h4>
-            <ul class="za-footer-links">
-              <li><a href="#terms">Terms & Condition</a></li>
-              <li><a href="#privacy">Privacy Policy</a></li>
-              <li><a href="#cookies">Cookie Policy</a></li>
-              <li><a href="#help">Help Center</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Bottom Copyright Divider Line -->
-    <hr class="za-footer-divider">
-
-    <!-- Bottom Copyright & Legal Links -->
-    <div class="row align-items-center za-footer-bottom">
-      <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-        <p class="za-copyright-text">
-          2022 PT. T - Travelzs All right reserved
-        </p>
-      </div>
-      <div class="col-md-6 text-center text-md-end">
-        <ul class="za-legal-links">
-          <li><a href="#privacy">Privacy Policy</a></li>
-          <li><a href="#terms">Terms & Condition</a></li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</footer>
+    </footer>
     <!-- Footer Area End -->
 
     <!-- Other js -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/meanmenu.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
     <!-- Image Slider  -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> -->
 
     <!-- Theme js -->
     <script src="assets/js/main.js"></script>

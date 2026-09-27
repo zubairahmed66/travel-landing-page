@@ -4198,128 +4198,6 @@ body {
   max-width: 1152px;
 }
 
-/***** Menu Style *****/
-/* mean menu customize */
-.mean-container a.meanmenu-reveal {
-  display: none;
-}
-
-.mean-container .mean-nav {
-  background: none;
-  margin-top: 0;
-}
-
-.mean-container .mean-bar {
-  padding: 0;
-  min-height: auto;
-  background: none;
-}
-
-.mean-container .mean-nav > ul {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  list-style-type: none;
-  display: block !important;
-}
-
-.mean-container a.meanmenu-reveal {
-  display: none !important;
-}
-
-.mean-container .mean-nav ul li a {
-  border-top: none;
-  width: 100%;
-  padding: 10px 0;
-  color: var(--za-cr-white);
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
-}
-.mean-container .mean-nav ul li a:hover {
-  color: var(--za-cr-yellow);
-}
-
-.mean-container .mean-nav ul li a.mean-expand {
-  margin-top: 5px;
-  padding: 0 !important;
-  line-height: 14px;
-  height: 30px;
-  width: 30px;
-  line-height: 30px;
-  color: var(--clr-common-black);
-  line-height: 30px;
-  top: 0;
-  font-weight: 400;
-}
-.mean-container .mean-nav ul li a.mean-expand:hover {
-  background: var(--clr-theme-1);
-  color: var(--clr-common-white);
-  border-color: var(--clr-theme-1);
-}
-
-.mean-container .mean-nav ul li > a > i {
-  display: none;
-}
-
-.mean-container .mean-nav ul li > a.mean-expand i {
-  display: inline-block;
-}
-
-.mean-container .mean-nav > ul > li:first-child > a {
-  border-top: 0;
-}
-
-.mean-container .mean-nav ul li a.mean-expand.mean-clicked {
-  color: var(--za-cr-white);
-}
-
-.mean-container .mean-nav ul li a.mean-expand.mean-clicked i {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  color: var(--za-cr-white);
-}
-
-.mean-expand i {
-  color: #fff;
-  position: absolute;
-  right: 128%;
-  top: 4px;
-}
-
-.mobile-menu.mean-container {
-  position: absolute;
-  top: 19%;
-}
-
-/***** Testimonial Style *****/
-/* Slick customize */
-.slick-slider {
-  position: relative;
-}
-.slick-slider button {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: var(--za-cr-white);
-  color: var(--za-cr-darkBlue);
-  bottom: 8px;
-  right: 0;
-  border-radius: 50px;
-  z-index: 9;
-  transition: all 0.5s ease-in-out;
-}
-.slick-slider button:hover {
-  background-color: var(--za-cr-royalBlue);
-  color: var(--za-cr-white);
-}
-.slick-slider .slick-prev {
-  right: 60px;
-}
-
 /*Header Area*/
 .za-header-area {
   position: fixed;
@@ -4628,15 +4506,10 @@ body.za-scroll-locked {
   }
 }
 .za-hero-img {
-  width: 420px;
-  height: 530px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-}
-@media (max-width: 767px), only screen and (min-width: 576px) and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
-  .za-hero-img {
-    width: 100%;
-  }
 }
 @media (max-width: 1024px) {
   .za-hero-content {
@@ -5173,6 +5046,18 @@ body.za-scroll-locked {
   position: relative;
   overflow: hidden;
 }
+@media (max-width: 992px) {
+  .za-choose-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+@media (max-width: 576px) {
+  .za-choose-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
 .za-choose-title {
   color: #121829;
   font-size: clamp(2.2rem, 4vw, 3.25rem);
@@ -5249,6 +5134,12 @@ body.za-scroll-locked {
   align-items: center;
   position: relative;
 }
+@media (max-width: 576px) {
+  .za-visual-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
 .za-visual-stack-left {
   display: flex;
   flex-direction: column;
@@ -5276,11 +5167,26 @@ body.za-scroll-locked {
 .za-img-card-top {
   height: 280px;
 }
+@media (max-width: 992px) {
+  .za-img-card-top {
+    height: 240px;
+  }
+}
 .za-img-card-bottom {
   height: 180px;
 }
 .za-img-card-tall {
   height: 480px;
+}
+@media (max-width: 992px) {
+  .za-img-card-tall {
+    height: 440px;
+  }
+}
+@media (max-width: 576px) {
+  .za-img-card-top, .za-img-card-bottom, .za-img-card-tall {
+    height: 240px;
+  }
 }
 
 /* Floating Testimonial Rating Badge */
@@ -5299,6 +5205,22 @@ body.za-scroll-locked {
   z-index: 10;
   border: 1px solid rgba(226, 232, 240, 0.8);
   animation: zaFloat 4s ease-in-out infinite;
+}
+@media (max-width: 992px) {
+  .za-rating-badge {
+    left: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .za-rating-badge {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
 }
 .za-rating-avatar {
   width: 38px;
@@ -5350,55 +5272,14 @@ body.za-scroll-locked {
     transition: none !important;
   }
 }
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
-@media (max-width: 991.98px) {
-  .za-choose-section {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .za-rating-badge {
-    left: 10px;
-  }
-  .za-img-card-top {
-    height: 240px;
-  }
-  .za-img-card-tall {
-    height: 440px;
-  }
-}
-@media (max-width: 575.98px) {
-  .za-choose-section {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-  .za-visual-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .za-img-card-top,
-  .za-img-card-bottom,
-  .za-img-card-tall {
-    height: 240px;
-  }
-  .za-rating-badge {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin-top: -10px;
-    margin-bottom: 10px;
-    align-self: flex-start;
-  }
-}
 /*Destination Area*/
 /* ==========================================================================
    DESTINATIONS SECTION STYLES
    Prefix: za-
    ========================================================================== */
 .za-destinations-section {
-  background-color: #f8fafc; /* Theme background */
+  background-color: #f8fafc;
+  /* Theme background */
   padding-top: 96px;
   padding-bottom: 96px;
   width: 100%;
@@ -5461,7 +5342,8 @@ body.za-scroll-locked {
 }
 
 .za-nav-btn.za-nav-next {
-  background-color: #028054; /* Active state matching screenshot */
+  background-color: #028054;
+  /* Active state matching screenshot */
   color: #ffffff;
   border-color: #028054;
 }
@@ -5474,7 +5356,12 @@ body.za-scroll-locked {
 /* Swiper Card Outer & Aspect Ratio */
 .za-destinations-swiper {
   padding-bottom: 12px;
-  overflow: visible; /* Allows soft card shadows to show */
+  overflow: visible;
+  /* Allows soft card shadows to show */
+}
+
+.za-destination-slide {
+  height: auto;
 }
 
 .za-destination-card {
@@ -5501,6 +5388,7 @@ body.za-scroll-locked {
 .za-card-img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -5575,6 +5463,103 @@ body.za-scroll-locked {
   }
   .za-card-image-wrapper {
     height: 300px;
+  }
+}
+/* =========================================
+   Destination Swiper - Responsive Fix
+========================================= */
+.za-destinations-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.za-destinations-swiper {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.za-destinations-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.za-destinations-swiper .swiper-slide {
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.za-destination-card {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.za-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.za-card-image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.za-card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Prevent Bootstrap row/column overflow */
+.za-destinations-header-row {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .za-destinations-section {
+    overflow: hidden;
+  }
+  .za-destinations-swiper {
+    width: 100%;
+    overflow: hidden;
+  }
+  .za-destinations-swiper .swiper-slide {
+    width: 100%;
+  }
+  .za-destination-card {
+    width: 100%;
+  }
+  .za-card-image {
+    aspect-ratio: 16/10;
+  }
+  .za-destinations-title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+  .za-destinations-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .za-slider-nav-controls {
+    margin-top: 10px;
+  }
+}
+/* Tablet */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .za-destinations-swiper .swiper-slide {
+    width: calc(50% - 10px);
+  }
+  .za-card-image {
+    aspect-ratio: 16/10;
   }
 }
 /*Experience Area*/
@@ -5659,7 +5644,8 @@ body.za-scroll-locked {
 .za-stat-number-wrap {
   display: flex;
   align-items: center;
-  color: #028054; /* Theme Green */
+  color: #028054;
+  /* Theme Green */
   font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
@@ -5740,14 +5726,16 @@ body.za-scroll-locked {
   height: 38px;
   min-width: 38px;
   border-radius: 50%;
-  background-color: #d1fae5; /* Light green pill fill */
+  background-color: #d1fae5;
+  /* Light green pill fill */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .za-check-icon {
-  color: #028054; /* Dark green check */
+  color: #028054;
+  /* Dark green check */
   font-size: 0.85rem;
   font-weight: 900;
 }
@@ -5800,6 +5788,7 @@ body.za-scroll-locked {
   .za-experience-section {
     padding-top: 48px;
     padding-bottom: 48px;
+    overflow: hidden;
   }
   .za-main-img-card {
     height: 380px;

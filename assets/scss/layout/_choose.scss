@@ -10,6 +10,16 @@
         width: 100%;
         position: relative;
         overflow: hidden;
+
+        @media #{$slg2} {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
+
+        @media #{$ssm} {
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
     }
 
     &-title {
@@ -98,6 +108,11 @@
         gap: 20px;
         align-items: center;
         position: relative;
+
+        @media #{$ssm} {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
     }
 
     &-stack-left {
@@ -131,6 +146,10 @@
 
         &-top {
             height: 280px;
+
+            @media #{$slg2} {
+                height: 240px;
+            }
         }
 
         &-bottom {
@@ -139,6 +158,19 @@
 
         &-tall {
             height: 480px;
+
+            @media #{$slg2} {
+                height: 440px;
+            }
+        }
+
+        @media #{$ssm} {
+
+            &-top,
+            &-bottom,
+            &-tall {
+                height: 240px;
+            }
         }
     }
 }
@@ -161,6 +193,20 @@
         z-index: 10;
         border: 1px solid rgba(226, 232, 240, 0.8);
         animation: zaFloat 4s ease-in-out infinite;
+
+        @media #{$slg2} {
+            left: 10px;
+        }
+
+        @media #{$ssm} {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
     }
 
     &-avatar {
@@ -222,55 +268,5 @@
 
     .za-img {
         transition: none !important;
-    }
-}
-
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
-@media (max-width: 991.98px) {
-    .za-choose-section {
-        padding-top: 64px;
-        padding-bottom: 64px;
-    }
-
-    .za-rating-badge {
-        left: 10px;
-    }
-
-    .za-img-card-top {
-        height: 240px;
-    }
-
-    .za-img-card-tall {
-        height: 440px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .za-choose-section {
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
-
-    .za-visual-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .za-img-card-top,
-    .za-img-card-bottom,
-    .za-img-card-tall {
-        height: 240px;
-    }
-
-    .za-rating-badge {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        align-self: flex-start;
     }
 }

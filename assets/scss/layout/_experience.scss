@@ -83,7 +83,8 @@
 .za-stat-number-wrap {
   display: flex;
   align-items: center;
-  color: #028054; /* Theme Green */
+  color: #028054;
+  /* Theme Green */
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.6rem;
   font-weight: 800;
@@ -164,14 +165,16 @@
   height: 38px;
   min-width: 38px;
   border-radius: 50%;
-  background-color: #d1fae5; /* Light green pill fill */
+  background-color: #d1fae5;
+  /* Light green pill fill */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .za-check-icon {
-  color: #028054; /* Dark green check */
+  color: #028054;
+  /* Dark green check */
   font-size: 0.85rem;
   font-weight: 900;
 }
@@ -227,6 +230,7 @@
   .za-experience-section {
     padding-top: 48px;
     padding-bottom: 48px;
+     overflow: hidden;
   }
 
   .za-main-img-card {
