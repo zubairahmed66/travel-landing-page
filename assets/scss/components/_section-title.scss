@@ -14,7 +14,7 @@
     color: var(--za-cr-darkBlue);
     margin-bottom: 20px;
 
-    @media #{$sm, $md, $od, $lg} {
+    @media #{$sm, $md, $lg} {
         font-size: 35px;
     }
 }

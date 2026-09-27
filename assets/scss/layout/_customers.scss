@@ -1,0 +1,189 @@
+@use '../helper'as *;
+
+/*Customers Area*/
+/* ==========================================================================
+   CUSTOMERS / TESTIMONIALS SECTION STYLES
+   Prefix: za-
+   ========================================================================== */
+
+/* Outer Section Setup */
+.za-customers-section {
+  background-color: #f8fafc;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.za-customers-container {
+  max-width: 1240px;
+}
+
+/* Header Title */
+.za-customers-title {
+  color: #121829;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 0;
+}
+
+/* Custom Navigation Buttons */
+.za-slider-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.za-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* Left Button: Dark Charcoal Circle */
+.za-nav-btn.za-nav-prev {
+  background-color: #121829;
+  color: #ffffff;
+}
+
+.za-nav-btn.za-nav-prev:hover {
+  background-color: #1e293b;
+  transform: scale(1.05);
+}
+
+/* Right Button: Forest Green Circle */
+.za-nav-btn.za-nav-next {
+  background-color: #028054;
+  color: #ffffff;
+}
+
+.za-nav-btn.za-nav-next:hover {
+  background-color: #016643;
+  transform: scale(1.05);
+}
+
+/* Carousel Container */
+.za-customers-swiper {
+  padding-top: 10px;
+  padding-bottom: 16px;
+  overflow: visible;
+}
+
+/* Testimonial Card */
+.za-testimonial-card {
+  background-color: #f0f4fd; /* Soft slate-blue tint */
+  border-radius: 32px;
+  padding: 40px 36px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.za-testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+/* Star Rating Rating Icons */
+.za-card-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.za-card-stars i {
+  color: #facc15; /* Vibrant Yellow Star */
+  font-size: 1rem;
+}
+
+/* Review Text */
+.za-card-quote {
+  color: #475569;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.65;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+/* Customer Profile Meta */
+.za-customer-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.za-customer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.za-customer-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.za-customer-name {
+  color: #121829;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.za-customer-role {
+  color: #94a3b8;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .za-customers-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .za-testimonial-card {
+    padding: 32px 28px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .za-customers-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .za-testimonial-card {
+    padding: 24px 20px;
+  }
+
+  .za-card-quote {
+    font-size: 0.9rem;
+  }
+}

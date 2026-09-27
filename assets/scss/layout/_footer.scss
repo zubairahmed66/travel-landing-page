@@ -1,0 +1,165 @@
+@use '../helper'as *;
+
+/*Footer Area Area*/
+/* ==========================================================================
+   FOOTER SECTION STYLES
+   Prefix: za-
+   ========================================================================== */
+
+/* Main Footer Container */
+.za-footer-section {
+  background-color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  border-top: 1px solid #e2e8f0;
+}
+
+.za-footer-container {
+  max-width: 1240px;
+}
+
+/* Brand Section */
+.za-footer-brand-title {
+  color: #121829;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+
+.za-footer-brand-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 320px;
+  margin-bottom: 28px;
+}
+
+/* Social Icons (Soft Teal/Green Background Circle) */
+.za-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.za-social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #e6f4f0; /* Soft pale mint background */
+  color: #028054; /* Deep mint green icon */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.za-social-icon:hover {
+  background-color: #028054;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(2, 128, 84, 0.2);
+}
+
+/* Menu Widget Titles */
+.za-footer-widget-title {
+  color: #121829;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* Footer Link List */
+.za-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.za-footer-links li {
+  margin-bottom: 16px;
+}
+
+.za-footer-links li:last-child {
+  margin-bottom: 0;
+}
+
+.za-footer-links a {
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.za-footer-links a:hover {
+  color: #028054;
+  padding-left: 4px;
+}
+
+/* Divider Line */
+.za-footer-divider {
+  border: 0;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 60px;
+  margin-bottom: 32px;
+  opacity: 1;
+}
+
+/* Bottom Bar Copyright & Links */
+.za-copyright-text {
+  color: #64748b;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.za-legal-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.za-legal-links a {
+  color: #64748b;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.za-legal-links a:hover {
+  color: #028054;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .za-footer-section {
+    padding-top: 60px;
+  }
+  
+  .za-footer-brand-desc {
+    max-width: 100%;
+  }
+
+  .za-footer-divider {
+    margin-top: 40px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .za-legal-links {
+    gap: 20px;
+    justify-content: center;
+  }
+}

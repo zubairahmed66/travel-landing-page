@@ -1,0 +1,256 @@
+@use '../helper'as *;
+
+/*Experience Area*/
+/* ==========================================================================
+   EXPERIENCE SECTION STYLES
+   Prefix: za-
+   ========================================================================== */
+
+/* Outer Section Setup */
+.za-experience-section {
+  background-color: #f8fafc;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  width: 100%;
+  position: relative;
+}
+
+.za-experience-container {
+  max-width: 1240px;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: VISUAL & FLOATING STATS
+   -------------------------------------------------------------------------- */
+.za-visual-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+/* Main Dark Frame Card */
+.za-main-img-card {
+  width: 100%;
+  height: 520px;
+  border-radius: 36px;
+  overflow: hidden;
+  background-color: #0b0f19;
+  box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.15);
+  position: relative;
+}
+
+.za-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.za-main-img-card:hover .za-main-img {
+  transform: scale(1.03);
+}
+
+/* Overlay Stats Glass Card */
+.za-stats-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  z-index: 5;
+}
+
+.za-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.za-stat-number-wrap {
+  display: flex;
+  align-items: center;
+  color: #028054; /* Theme Green */
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.za-stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+.za-stat-suffix {
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.za-stat-label {
+  color: #64748b;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.za-stat-divider {
+  width: 1px;
+  height: 32px;
+  background-color: #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: TYPOGRAPHY & FEATURES
+   -------------------------------------------------------------------------- */
+.za-experience-title {
+  color: #121829;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.5px;
+  margin-bottom: 24px;
+}
+
+.za-experience-desc {
+  color: #64748b;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+/* Feature Check List */
+.za-experience-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.za-feature-check-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s ease;
+}
+
+.za-feature-check-item:hover {
+  transform: translateX(6px);
+}
+
+.za-check-icon-wrap {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background-color: #d1fae5; /* Light green pill fill */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.za-check-icon {
+  color: #028054; /* Dark green check */
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.za-feature-text {
+  color: #121829;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+/* CTA Button */
+.za-cta-btn {
+  display: inline-block;
+  background-color: #028054;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 10px 20px -5px rgba(2, 128, 84, 0.3);
+  transition: all 0.3s ease;
+}
+
+.za-cta-btn:hover {
+  background-color: #016643;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px -5px rgba(2, 128, 84, 0.4);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .za-experience-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .za-visual-wrapper {
+    max-width: 100%;
+  }
+
+  .za-main-img-card {
+    height: 460px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .za-experience-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .za-main-img-card {
+    height: 380px;
+    border-radius: 28px;
+  }
+
+  .za-stats-card {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 14px 8px;
+    border-radius: 18px;
+  }
+
+  .za-stat-number-wrap {
+    font-size: 1.3rem;
+  }
+
+  .za-stat-label {
+    font-size: 0.6rem;
+  }
+
+  .za-feature-text {
+    font-size: 0.92rem;
+  }
+}

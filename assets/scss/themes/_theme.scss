@@ -86,7 +86,7 @@ body {
     margin: 0 auto;
     padding: 16px 24px;
 
-    @media #{$dm} {
+    @media #{$sxs} {
         .za-navbar-actions {
             display: none !important;
         }

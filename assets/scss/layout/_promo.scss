@@ -1,0 +1,135 @@
+@use '../helper'as *;
+
+/*Promo Banner Area Area*/
+/* ==========================================================================
+   PROMO BANNER SECTION STYLES
+   Prefix: za-
+   ========================================================================== */
+
+/* Section Outer Canvas */
+.za-promo-section {
+  background-color: #f8fafc; /* Theme consistent background */
+  padding-top: 60px;
+  padding-bottom: 96px;
+  width: 100%;
+  position: relative;
+}
+
+.za-promo-container {
+  max-width: 1240px;
+}
+
+/* Main Banner Box */
+.za-promo-banner {
+  background-color: #028054; /* Deep forest green matching theme */
+  border-radius: 40px;
+  padding: 80px 32px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 24px 48px -12px rgba(2, 128, 84, 0.2);
+}
+
+/* Decorative Background Vector Accent Circles */
+.za-promo-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06); /* Subtle translucent tint */
+  pointer-events: none;
+}
+
+.za-promo-circle-top-right {
+  width: 280px;
+  height: 280px;
+  top: -100px;
+  right: -80px;
+}
+
+.za-promo-circle-bottom-left {
+  width: 340px;
+  height: 340px;
+  bottom: -140px;
+  left: -100px;
+}
+
+/* Content Container */
+.za-promo-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Heading Typography */
+.za-promo-title {
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  margin-bottom: 36px;
+}
+
+/* Call to Action Button */
+.za-promo-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.za-promo-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #028054;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.za-promo-btn:hover {
+  background-color: #f1f5f9;
+  color: #016643;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.za-promo-btn:active {
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .za-promo-banner {
+    padding: 60px 24px;
+    border-radius: 32px;
+  }
+
+  .za-promo-title {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .za-promo-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .za-promo-banner {
+    padding: 44px 20px;
+    border-radius: 24px;
+  }
+
+  .za-promo-btn {
+    width: 100%;
+    max-width: 240px;
+    padding: 14px 24px;
+  }
+}

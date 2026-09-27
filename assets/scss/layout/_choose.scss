@@ -1,0 +1,276 @@
+@use '../helper'as *;
+
+/*Choose Area*/
+
+.za-choose {
+    &-section {
+        background-color: #f8fafc;
+        padding-top: 96px;
+        padding-bottom: 96px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    &-title {
+        color: #121829;
+        font-size: clamp(2.2rem, 4vw, 3.25rem);
+        font-weight: 800;
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+        margin-bottom: 20px;
+    }
+
+    &-subtitle {
+        color: #64748b;
+        font-size: 0.98rem;
+        font-weight: 500;
+        line-height: 1.65;
+        max-width: 480px;
+        margin-bottom: 40px;
+    }
+
+    &-feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateX(6px);
+        }
+    }
+}
+
+.za-feature {
+    &-badge {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        border-radius: 50%;
+        background-color: #028054;
+        /* Deep forest green */
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 16px -4px rgba(2, 128, 84, 0.25);
+        margin-top: 2px;
+    }
+
+    &-info {
+        max-width: 440px;
+    }
+
+    &-title {
+        color: #121829;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.35;
+    }
+
+    &-desc {
+        color: #64748b;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 0.92rem;
+        font-weight: 400;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+}
+
+/* Right Column: Visual Layout */
+.za-visual {
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        align-items: center;
+        position: relative;
+    }
+
+    &-stack-left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+    }
+}
+
+
+/* Image Card Styling */
+.za-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+
+    &-card {
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+        background-color: #ffffff;
+
+        &:hover {
+            & .za-img {
+                transform: scale(1.04);
+            }
+        }
+
+        &-top {
+            height: 280px;
+        }
+
+        &-bottom {
+            height: 180px;
+        }
+
+        &-tall {
+            height: 480px;
+        }
+    }
+}
+
+
+/* Floating Testimonial Rating Badge */
+.za-rating {
+    &-badge {
+        position: absolute;
+        top: 52%;
+        left: -28px;
+        transform: translateY(-50%);
+        background: #ffffff;
+        padding: 10px 18px;
+        border-radius: 16px;
+        box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.12);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        z-index: 10;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        animation: zaFloat 4s ease-in-out infinite;
+    }
+
+    &-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-name {
+        color: #121829;
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    &-stars {
+        color: #64748b;
+        font-size: 0.72rem;
+        font-weight: 600;
+        margin-top: 2px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        & i {
+            color: #facc15;
+            /* Yellow star icon */
+            font-size: 0.75rem;
+        }
+    }
+
+}
+
+/* ==========================================================================
+   ANIMATIONS & ACCESSIBILITY
+   ========================================================================== */
+@keyframes zaFloat {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-50%) translateY(-6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .za-rating-badge {
+        animation: none !important;
+    }
+
+    .za-img {
+        transition: none !important;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .za-choose-section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+    .za-rating-badge {
+        left: 10px;
+    }
+
+    .za-img-card-top {
+        height: 240px;
+    }
+
+    .za-img-card-tall {
+        height: 440px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .za-choose-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .za-visual-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .za-img-card-top,
+    .za-img-card-bottom,
+    .za-img-card-tall {
+        height: 240px;
+    }
+
+    .za-rating-badge {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        align-self: flex-start;
+    }
+}

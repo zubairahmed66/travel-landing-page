@@ -286,4 +286,97 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+    // 03 Destination Area
+    // Initialize Swiper Carousel
+    const destinationsSwiper = new Swiper('.za-destinations-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '#za-destinations-next',
+            prevEl: '#za-destinations-prev',
+        },
+        breakpoints: {
+            // Responsive Breakpoints
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 28,
+            }
+        }
+    });
+
+    // 04 Experience Area
+    const statNumbers = document.querySelectorAll('.za-stat-number');
+    let animated = false;
+
+    const animateCounters = () => {
+        statNumbers.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            const duration = 1800; // Total duration in ms
+            const stepTime = 20; // Step duration
+            const steps = duration / stepTime;
+            const increment = target / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    counter.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    counter.textContent = Math.ceil(current);
+                }
+            }, stepTime);
+        });
+    };
+
+    // Trigger animation when the stats card scrolls into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !animated) {
+                animated = true;
+                animateCounters();
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    const statsCard = document.querySelector('.za-stats-card');
+    if (statsCard) {
+        observer.observe(statsCard);
+    }
+
+    // 04 Customers Area
+    // Initialize Swiper Testimonial Slider
+    const customersSwiper = new Swiper('.za-customers-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        speed: 600,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '#za-customers-next',
+            prevEl: '#za-customers-prev',
+        },
+        breakpoints: {
+            // 2 Columns on Tablet and Desktop
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 28,
+            }
+        }
+    });
 });

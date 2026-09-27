@@ -1,96 +1,171 @@
 @use '../helper'as *;
 
 /*Values Area*/
+.za-values {
+    &-section {
+        background-color: #f8fafc;
+        padding-top: 96px;
+        padding-bottom: 96px;
+        width: 100%;
+        position: relative;
 
-.za-features-section {
-    background: #f8fafc;
-    padding: 110px 0;
-}
+        @media #{$slg2} {
+            padding-top: 64px;
+            padding-bottom: 64px;
+        }
 
-.za-section-header {
-    max-width: 650px;
-}
-
-.za-section-title {
-    margin-bottom: 15px;
-    color: #121c2a;
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.za-section-subtitle {
-    margin: 0;
-    color: #64748b;
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.za-feature-card {
-    padding: 35px;
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0px 10px 30px -5px rgba(16, 185, 129, 0.05);
-    border-radius: 32px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.za-feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
-}
-
-.za-feature-icon {
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 25px;
-    color: #fff;
-    // background: #006c49;
-    border-radius: 14px;
-    font-size: 23px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.za-feature-title {
-    margin-bottom: 14px;
-    color: #121c2a;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.za-feature-text {
-    margin-bottom: 25px;
-    color: #64748b;
-    font-size: 16px;
-    line-height: 1.7;
-}
-
-.za-feature-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #006c49;
-    font-size: 15px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: gap 0.3s ease;
-}
-
-.za-feature-btn:hover {
-    gap: 13px;
-}
-
-@media (max-width: 767.98px) {
-    .za-section-title {
-        font-size: 32px;
+        @media #{$ssm} {
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
     }
 
-    .za-feature-card {
-        padding: 28px;
+    &-header-row {
+        margin-bottom: 56px;
+
+        @media #{$slg2} {
+            margin-bottom: 40px;
+        }
+    }
+
+    &-title {
+        color: #121829;
+        font-size: clamp(2.1rem, 3.8vw, 3rem);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        margin-bottom: 16px;
+    }
+
+    &-subtitle {
+        color: #64748b;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+        font-weight: 500;
+        line-height: 1.6;
+        max-width: 620px;
+        margin: 0 auto;
+    }
+}
+
+
+.za-value {
+    &-col {
+        display: flex;
+    }
+
+    &-card {
+        background-color: #ffffff;
+        border-radius: 32px;
+        padding: 48px 32px;
+        text-align: center;
+        width: 100%;
+        border: 1px solid rgba(226, 232, 240, 0.7);
+        box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.03);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+            border-color 0.35s ease;
+        animation: zaFadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(2, 128, 84, 0.1);
+            // border-color: rgba(2, 128, 84, 0.2);
+            border-color: var(--za-cr-text-deepGreen);
+
+            & .za-value-icon-wrapper {
+                transform: scale(1.08);
+            }
+        }
+
+
+        @media #{$slg2} {
+            padding: 36px 24px;
+            border-radius: 24px;
+        }
+
+        &-title {
+            color: #121829;
+            //   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        &-text {
+            color: #64748b;
+            //   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.65;
+            margin-bottom: 0;
+        }
+    }
+
+    &-icon-wrapper {
+        width: 76px;
+        height: 76px;
+        border-radius: 50%;
+        background-color: #9fe8cd;
+        /* Light mint green accent matching screenshot */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 32px;
+        transition: transform 0.3s ease;
+
+        @media #{$ssm} {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &-icon {
+        font-size: 1.65rem;
+        color: #028054;
+
+        @media #{$ssm} {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+/* ==========================================================================
+   ANIMATIONS & ACCESSIBILITY
+   ========================================================================== */
+@keyframes zaFadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger card animations */
+.za-value-col:nth-child(1) .za-value-card {
+    animation-delay: 0.1s;
+}
+
+.za-value-col:nth-child(2) .za-value-card {
+    animation-delay: 0.25s;
+}
+
+.za-value-col:nth-child(3) .za-value-card {
+    animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .za-value-card {
+        animation: none !important;
+        transition: none !important;
     }
 }

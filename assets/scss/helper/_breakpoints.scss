@@ -15,16 +15,16 @@ $sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
 //---Smartphones
 $xs: '(max-width: 767px)';
 //---Other--Small Devices or Special Mobile Sizes
-$od: 'only screen and (min-width: 300px) and (max-width: 750px)';
-$dm: '(max-width: 460px)';
-$dm2: '(min-width: 992px)';
-$dm3: '(max-width: 1024px)';
-$dm4: '(max-width: 768px)';
-$dm5: '(max-width: 576px)';
+$sxl: '(max-width: 1024px)';
+$slg: '(min-width: 992px)';
+$slg2: '(max-width: 992px)';
+$smd: '(max-width: 768px)'; 
+$ssm: '(max-width: 576px)';
+$sxs: '(max-width: 460px)';
 
 
 
-//    @media #{$xl} {
+//    @media #{$slg2} {
 //         height: 650px;
 //    }
 

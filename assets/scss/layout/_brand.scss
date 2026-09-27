@@ -2,62 +2,76 @@
 
 /*Brand Area*/
 
-/* ==========================================================================
-   BRAND SECTION STYLES
-   Prefix: za-
-   ========================================================================== */
+.za-brand {
+  &-section {
+    background-color: #028054;
+    padding-top: 56px;
+    padding-bottom: 56px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 
-/* Brand Section Container */
-.za-brand-section {
-  background-color: #028054; /* Forest Green Accent Color matching Travbook theme */
-  padding-top: 56px;
-  padding-bottom: 56px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+    @media #{$slg2} {
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
+
+    @media #{$ssm} {
+      padding-top: 36px;
+      padding-bottom: 36px;
+    }
+  }
+
+  // &-container {
+  //   max-width: 1240px;
+  // }
+
+  &-row {
+    row-gap: 20px;
+  }
+
+  &-title {
+    color: #ffffff;
+    // font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 0;
+    animation: zaFadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    @media #{$slg2} {
+      margin-bottom: 12px;
+    }
+
+    @media #{$ssm} {
+      font-size: 1.65rem;
+    }
+  }
+
+  &-description {
+    color: rgba(255, 255, 255, 0.92);
+    // font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.65;
+    margin-bottom: 0;
+    max-width: 540px;
+    animation: zaFadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    @media #{$slg2} {
+      max-width: 100%;
+    }
+  }
 }
 
-.za-brand-container {
-  max-width: 1240px;
-}
-
-/* Row Alignment & Spacing */
-.za-brand-row {
-  row-gap: 20px;
-}
-
-/* Left Title Styling */
-.za-brand-title {
-  color: #ffffff;
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(1.85rem, 3.2vw, 2.6rem);
-  font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: -0.5px;
-  margin-bottom: 0;
-  animation: zaFadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Right Description Styling */
-.za-brand-description {
-  color: rgba(255, 255, 255, 0.92);
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
-  font-weight: 400;
-  line-height: 1.65;
-  margin-bottom: 0;
-  max-width: 540px;
-  animation: zaFadeInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* ==========================================================================
-   SMOOTH ENTRANCE ANIMATIONS
-   ========================================================================== */
+/* SMOOTH ENTRANCE ANIMATIONS */
 @keyframes zaFadeInLeft {
   0% {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -69,6 +83,7 @@
     opacity: 0;
     transform: translateX(30px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -83,33 +98,3 @@
   }
 }
 
-/* ==========================================================================
-   RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
-
-/* Tablet & Mobile Adjustments */
-@media (max-width: 991.98px) {
-  .za-brand-section {
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-
-  .za-brand-title {
-    margin-bottom: 12px;
-  }
-
-  .za-brand-description {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .za-brand-section {
-    padding-top: 36px;
-    padding-bottom: 36px;
-  }
-
-  .za-brand-title {
-    font-size: 1.65rem;
-  }
-}

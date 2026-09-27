@@ -1,0 +1,191 @@
+@use '../helper'as *;
+
+/*Destination Area*/
+/* ==========================================================================
+   DESTINATIONS SECTION STYLES
+   Prefix: za-
+   ========================================================================== */
+
+.za-destinations-section {
+  background-color: #f8fafc; /* Theme background */
+  padding-top: 96px;
+  padding-bottom: 96px;
+  width: 100%;
+  position: relative;
+}
+
+.za-destinations-container {
+  max-width: 1240px;
+}
+
+/* Header Typography */
+.za-destinations-title {
+  color: #121829;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.za-destinations-subtitle {
+  color: #64748b;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  line-height: 1.65;
+  max-width: 480px;
+  margin-bottom: 0;
+}
+
+/* Custom Navigation Buttons */
+.za-slider-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.za-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #121829;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.za-nav-btn:hover {
+  background-color: #028054;
+  color: #ffffff;
+  border-color: #028054;
+  transform: scale(1.05);
+}
+
+.za-nav-btn.za-nav-next {
+  background-color: #028054; /* Active state matching screenshot */
+  color: #ffffff;
+  border-color: #028054;
+}
+
+.za-nav-btn.za-nav-next:hover {
+  background-color: #016643;
+  border-color: #016643;
+}
+
+/* Swiper Card Outer & Aspect Ratio */
+.za-destinations-swiper {
+  padding-bottom: 12px;
+  overflow: visible; /* Allows soft card shadows to show */
+}
+
+.za-destination-card {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease;
+}
+
+.za-destination-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Image Wrapper with Pill Glass Badge */
+.za-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+}
+
+.za-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.za-destination-card:hover .za-card-img {
+  transform: scale(1.05);
+}
+
+/* Frosted Glass Floating Price Tag */
+.za-price-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Card Bottom Content */
+.za-card-body {
+  padding-top: 20px;
+}
+
+.za-card-title {
+  color: #121829;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.za-card-location {
+  color: #64748b;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.za-loc-icon {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  .za-destinations-section {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .za-card-image-wrapper {
+    height: 340px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .za-destinations-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .za-card-image-wrapper {
+    height: 300px;
+  }
+}
